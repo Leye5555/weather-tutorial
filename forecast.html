@@ -17,52 +17,55 @@
       defer
     ></script>
     <link rel="stylesheet" href="style.css" />
+    <script src="./forecast.js" defer></script>
   </head>
   <body>
-    <div class="d-flex">
-      <div class="col-sm-6 col-1">
-        <div class="mb-3">
-          <label for="" class="form-label">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            name=""
-            id=""
-            aria-describedby="helpId"
-            placeholder=""
-          />
-          <small id="helpId" class="form-text text-muted">Help text</small>
-        </div>
-        <div class="card">
-          <img
-            class="card-img-top"
-            src="holder.js/100x180/?text=Image cap"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h4 class="card-title">Title</h4>
-            <p class="card-text">Text</p>
+    <div class="row">
+      <div class="col search-bar-col">
+        <div class="content">
+          <div class="mb-3">
+            <input
+              type="search"
+              class="form-control"
+              name="search"
+              id="search"
+              aria-describedby="search-location"
+              placeholder="Enter Location"
+            />
+            <small hidden id="search-location" class="form-text text-muted"
+              >Search City e.g. New York</small
+            >
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Item 1</li>
-            <li class="list-group-item">Item 2</li>
-            <li class="list-group-item">Item 3</li>
-          </ul>
+          <div class="d-grid search-wrap">
+            <button type="button" id="btn" class="btn btn-primary">
+              Search
+            </button>
+          </div>
+
+          <div class="d-grid">
+            <h2>Dynamic History</h2>
+            <ul class="list-group gap-5 list-group-flush">
+              <li class="list-group-item">Item 1</li>
+              <li class="list-group-item">Item 2</li>
+              <li class="list-group-item">Item 3</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="card mb-3">
-          <img src="..." class="card-img-top" alt="..." />
+      <div class="col">
+        <div class="card main mb-3">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </p>
+            <h5 class="card-title current-location">Chosen Location</h5>
+            <!-- temperature, humidity, wind speed, and weather condition (e.g., sunny, rainy, cloudy)
+ -->
+            <ul class="list-group gap-5 list-group-flush">
+              <li class="list-group-item" id="temperature">Temperature</li>
+              <li class="list-group-item" id="humidity">Humidity</li>
+              <li class="list-group-item" id="wind-speed">Wind Speed</li>
+              <li class="list-group-item" id="w-condition">
+                Weather Condition
+              </li>
+            </ul>
           </div>
         </div>
         <div class="d-flex">

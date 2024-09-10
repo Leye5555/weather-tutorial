@@ -4,6 +4,12 @@
   margin: 0;
 }
 
+body {
+  height: 100vh;
+}
+body > div {
+  height: 100%;
+}
 .carousel-item > img {
   width: 100%;
   height: 50vh;
@@ -26,4 +32,92 @@
 
 .card {
   flex: 1;
+}
+.row {
+  margin: 0 !important;
+}
+.search-bar-col {
+  max-width: 400px;
+  padding: 8px;
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+  height: 100%;
+
+  width: 100%;
+}
+
+.search-bar-col::before {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(
+    45deg,
+    rgb(0, 86, 156),
+    rgb(133, 0, 148),
+    rgb(98, 91, 0)
+  );
+  animation: turn-shadow 10s infinite linear;
+  transform: translateY(-300px) translateX(-100px);
+  height: 50%;
+  width: 50%;
+}
+
+@keyframes turn-shadow {
+  0% {
+    transform: translateY(-300px) translateX(-100px);
+    height: 50%;
+    width: 50%;
+  }
+  20% {
+    transform: translateY(-300px) translateX(0px);
+    height: 40%;
+    width: 100%;
+  }
+  40% {
+    transform: translateY(-300px) translateX(300px);
+    height: 100%;
+    width: 100%;
+  }
+  /* 60% {
+    transform: rotateZ(342deg) translateY(-300px);
+  }
+  80% {
+    transform: rotateZ(432deg) translateY(-300px);
+  }
+  100% {
+    transform: rotateZ(522deg) translateY(-300px);
+  } */
+}
+
+.content {
+  background-color: white;
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+input:focus ~ small {
+  display: block !important;
+}
+
+.search-wrap {
+  margin-bottom: 100px !important;
+}
+
+.card.main {
+  align-items: flex-start !important;
+  height: max-content !important;
+}
+
+.list-group-item {
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .search-bar-col {
+    height: 20%;
+  }
 }
